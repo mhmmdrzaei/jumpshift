@@ -9,7 +9,7 @@
 
         <?php the_post_thumbnail('large'); ?>
        
-        <div class="about"><h2><?php the_content(); ?></h2>
+        <div class="about" id="about"><h2><?php the_content(); ?></h2>
         </div>
          <div class="readMore">Read More</div>
 
@@ -19,9 +19,9 @@
 
       <?php endwhile; // end the loop?>
     <!-- sevices -->
-    <h2> Services:</h2>
+    <h2 id="services"> Services:</h2>
      <?php while( has_sub_fields('services') ): ?>
-    <div class="services">
+    <div class="servicesEach">
        <h3><?php the_sub_field('services_title'); ?></h3>
        <div class="serviceMain">
          <?php the_sub_field('services_description'); ?>
@@ -30,7 +30,7 @@
       <?php endwhile;//end of services ?>
 
     <!-- Blog and Video -->
-<div class="blogMain">
+<div class="blogMain" id="blog">
   <h2>Blog:</h2>
     <?php while( has_sub_fields('hero_video') ): ?>
     <div class="Vimeo">
@@ -71,7 +71,7 @@
       </div>
     </div>
   </div>
-  <div class="contactMain">
+  <div class="contactMain" id="contact">
     <h2>Contact:</h2>
     <div class="contactText">
       <?php the_field('contact_text') ?>
