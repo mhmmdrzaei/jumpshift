@@ -9,10 +9,10 @@
 
 @import 'normalize';
 @import 'typography';
-@import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+@import '_hamburger';
 /*
 ====================================
 Default Styling
@@ -39,11 +39,42 @@ body {
 .full {
 	width: 100%;
 }
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+//header 
+.headerContainer{
+	@extend .flex;
+	align-items: center;
+	a {
+		width: 30%;
+	}
+	ul {
+		list-style: none;
+		@extend .flex;
+	}
+}
+nav {
+	display: none;
+}
 
 
 
 
 
+@media(max-width: 650px){
+	.headerContainer{
 
+		ul {
+			display: none;
+		}
+	}
+	nav {
+		display: block;
+	}
+
+}
 
 

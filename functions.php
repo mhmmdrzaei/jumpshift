@@ -1,6 +1,12 @@
 <?php
 
 /** Tell WordPress to run theme_setup() when the 'after_setup_theme' hook is run. */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
 
 if ( ! function_exists( 'theme_setup' ) ):
 

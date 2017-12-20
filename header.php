@@ -14,17 +14,34 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="container">
-    <h1>
+  <div class="container headerContainer">
+      <?php $image = get_field('logo_image', 'option');
+       if( !empty($image) ): ?>
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php the_field('the_alt');?>" alt="<?php the_field('the_alt');?>" />
+         <?php endif; ?>
       </a>
-    </h1>
 
     <?php wp_nav_menu( array(
       'container' => false,
       'theme_location' => 'primary'
     )); ?>
+
+      <nav>
+    
+    <input id="nav" type="checkbox" />
+    
+    <label for="nav">
+      <b><i></i><i></i><i></i></b>
+    </label>
+    
+    <menu class="away">
+      <?php wp_nav_menu( array(
+      'container' => false,
+      'theme_location' => 'primary'
+    )); ?>
+    </menu>
+  </nav>
   </div> <!-- /.container -->
 </header><!--/.header-->
 
