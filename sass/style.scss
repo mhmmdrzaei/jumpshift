@@ -9,18 +9,20 @@
 
 @import 'normalize';
 @import 'typography';
-@import 'sidebar';
-@import 'comments';
-@import 'footer';
 @import '_hamburger';
 /*
 ====================================
 Default Styling
 ====================================
 */
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
 
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 body {
@@ -30,7 +32,16 @@ body {
 a {
 	font-family: 'Muli', sans-serif;
 	color: black;
+	&:hover {
+		color: #4F5151;
+	}
 
+}
+h2 {
+	@include fontSize(14);
+}
+.main {
+    margin: 0 auto;
 }
 
 .container {
@@ -53,23 +64,265 @@ a {
 //header 
 .headerContainer{
 	@extend .flex;
+	justify-content: space-between;
 	align-items: center;
 	a {
-		width: 30%;
+		width: 34%;
+		margin-right: 28px;
+
 	}
 	ul {
+		@include fontSize(12);
 		list-style: none;
 		@extend .flex;
+		text-transform: uppercase;
+		font-weight: 700;
+		width: 60%;
+		justify-content: flex-end;
 	}
 }
 nav {
 	display: none;
 }
 
+// about 
+.about {
+	padding: 3%;
+	text-align: center;
+	p:nth-child(2) {
+		display: none;
+		margin-top: 5px;
+	}
+}
+.readMore {
+	margin: 0 auto;
+	width: 170px;
+	margin-bottom: 25px;
 
+	h2 {
+		text-align: center;
+		cursor: pointer;
+		border: 3px solid black;
+		padding: 10px;
+		&:hover {
+			background: black;
+			color: white;
+		}
+	}
+}
+img.size-large {
+	width: 1200px;
+}
 
+//services 
+#services {
+		width: 100%;
+		background: #4F5151;
+		color: white;
+		padding: 20px 3% 0;
+	}
+.services {
+	background: #4F5151;
+	color: white;
+	padding: 0 3% 20px;
+	max-height: 650px;
+	
+	-moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 3;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    column-gap: 1em;
 
+	.servicesEach {
+		display: inline-block;
+		margin: 0 0 1em;
+		width: 100%;
+		padding: 15px;
+		margin: 0 auto;
+		-webkit-column-fill: balance;
+		 -moz-column-fill: balance;
+		 column-fill: balance;
+		h3 {
+			text-decoration: underline;
+		}
+	}
+	a {
+		color: white;
+	}
+	.serviceMain {
+		ul {
+			width: 85%;
+			margin: 10px auto;
 
+		}
+	}
+}
+.seviceContact {
+	-webkit-column-fill: balance;
+		 -moz-column-fill: balance;
+		 column-fill: balance;
+	padding: 15px;
+}
+.serviceButton {
+	 width: 170px;
+    border: 3px solid white;
+    padding: 12px;
+    margin-top: 18px;
+    text-align: center;
+	cursor: pointer;
+	&:hover {
+		background: white;
+		color: #4F5151;
+	}
+}
+//blog
+.blogMain {
+	@extend .flex;
+	padding: 30px 3%;
+	h2 {
+		width: 100%;
+		margin-bottom: 20px;
+
+	}
+	.Vimeo {
+		width: 50%;
+		align-self: center;
+	}
+	.blogposts {
+		width: 45%;
+		margin: 0 auto;
+		.updates {
+			.update {
+				a {
+					text-decoration: underline;
+					text-transform: uppercase;
+					font-weight: 700;
+				}
+				.entry-content{
+					a{
+						text-decoration: none;
+						text-transform: none;
+						display: block;
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
+.moreBlog {
+
+	border: 3px solid black;
+	text-transform: uppercase;
+	padding: 4px;
+	width: 280px;
+    text-align: center;
+    h2 {
+    	margin-bottom: 0;
+    }
+    &:hover {
+    	border: 3px solid #4F5151;
+    }
+}
+// contact
+.contactMain {
+	background: #1E1E1E;
+	color: white;
+	justify-content: space-between;
+	padding: 3% 30px;
+	
+	h2 {width: 100%;}
+	a {
+		color: white;
+	}
+	@extend .flex;
+}
+.contactText {
+	width: 225px;
+}
+form {
+	@extend .flex;
+	justify-content: flex-end;
+}
+.wpcf7-validates-as-email, .wpcf7-validates-as-required {
+	// width: 100%;
+	background: #3E3E3E;
+	border: none;
+}
+.wpcf7-validates-as-required {
+	margin-right: 7px;
+}
+.wpcf7-text, .wpcf7-textarea {
+	background: #3E3E3E;
+	color: white;
+	border: none;
+}
+
+.wpcf7-submit {
+	background: #1E1E1E;
+	border: 3px solid white;
+	color: white;
+	padding: 5px 13px;
+	&:hover {
+		background: white;
+		color: #1E1E1E;
+	}
+	margin-top: 12px;
+}
+.contactForm {
+	width: 49%;
+}
+.wpcf7-form {
+}
+.contactText {
+	margin: 20px auto;
+}
+.email {
+	margin: 10px auto;
+}
+.phone{
+	margin: 25px auto;
+}
+form.wpcf7-form {
+	p:nth-child(5){
+		width: 183px;
+		position: relative;
+		right: 190px;
+
+	}
+}
+.footerCredit {
+	background: #1E1E1E;
+	color: white;
+	@include fontSize(7);
+	padding: 20px;
+	text-align: right;
+	a{
+		color: white;
+	}
+}
+
+//blog page
+.contentBlog {
+	@extend .flex;
+
+}
+.sidebarBlog {
+	width: 28%;
+	margin: 0 auto;
+    padding: 2% 0;
+}
+.blogMainPage {
+	width: 68%;
+}
+.xoxo {
+	list-style: none;
+	li:nth-child(1){
+		width: 78%;
+		margin: 0 auto;
+	}
+}
 @media(max-width: 650px){
 	.headerContainer{
 

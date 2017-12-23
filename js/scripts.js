@@ -8,4 +8,10 @@ $(function(){
 
         });
 
+	$("#button").on("click",function(){
+
+    $("#about h2 p:nth-child(2)").css("display","block");
+    $("#button").css("display", "none");
+
+});
 });

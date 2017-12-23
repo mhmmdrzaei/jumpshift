@@ -11,7 +11,7 @@
        
         <div class="about" id="about"><h2><?php the_content(); ?></h2>
         </div>
-         <div class="readMore">Read More</div>
+         <div class="readMore" id="button"><h2>Read More</h2></div>
 
          
 
@@ -20,14 +20,25 @@
       <?php endwhile; // end the loop?>
     <!-- sevices -->
     <h2 id="services"> Services:</h2>
-     <?php while( has_sub_fields('services') ): ?>
-    <div class="servicesEach">
-       <h3><?php the_sub_field('services_title'); ?></h3>
-       <div class="serviceMain">
-         <?php the_sub_field('services_description'); ?>
-       </div>
-    </div>
-      <?php endwhile;//end of services ?>
+    <div class="services">
+      
+       <?php while( has_sub_fields('services') ): ?>
+      <div class="servicesEach">
+         <h3><?php the_sub_field('services_title'); ?></h3>
+         <div class="serviceMain">
+           <?php the_sub_field('services_description'); ?>
+         </div>
+      </div>
+        <?php endwhile;//end of services ?>
+
+        <div class="seviceContact">
+          <h2>
+            Want to know more?
+
+            <a href="#contact"><div class="serviceButton">Contact Me</div></a>
+          </h2>
+        </div>
+      </div>
 
     <!-- Blog and Video -->
 <div class="blogMain" id="blog">
@@ -44,7 +55,7 @@
     <div class="blogposts">
       <div class="updates">
         <?
-          $args = array( 'post_type' => 'post', 'order' => 'DESC', 'posts_per_page' => 3 );
+          $args = array( 'post_type' => 'post', 'order' => 'DESC', 'posts_per_page' => 2 );
           query_posts( $args ); // hijack the main loop
           while ( have_posts() ) : the_post();
             ?>
@@ -54,8 +65,8 @@
             <?
             the_excerpt();
             ?>
-            <div class="readMore"><a href="<? the_permalink(); ?>"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-  Read More</a></div>
+              
+            </div>
           </div>
            <?
           endwhile;
@@ -66,31 +77,9 @@
         </div> 
         <div class="moreBlog">
       
-            <a href="<?php echo get_permalink(9) ?>"> See All Blog Posts</a>
+            <a href="<?php echo get_permalink(9) ?>"><h2> See All Blog Posts</h2></a>
           </div>
       </div>
-    </div>
-  </div>
-  <div class="contactMain" id="contact">
-    <h2>Contact:</h2>
-    <div class="contactText">
-      <?php the_field('contact_text') ?>
-    </div>
-    <div class="email">
-
-      <a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a>
-    </div>
-    <div class="phone">
-      <?php the_field('phone_number') ?>
-    </div>
-    <div class="socialMediaMain">
-      <?php while( has_sub_fields('social_media_links') ): ?>
-        <a href="<?php the_sub_field('social_media_link'); ?>"><?php the_sub_field('social_media_symbol'); ?></a>
-      <?php endwhile;//end of social media loop ?>
-    </div>
-
-    <div class="contactForm">
-      <?php the_field('contact_form') ?>
     </div>
   </div>
     </div> <!-- /,content -->
