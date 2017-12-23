@@ -25,6 +25,15 @@
 
 			<section class="entry-content">
 				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
+				<?php while( has_sub_fields('video_blog') ): ?>
+            <div class="videoBlogBlog">
+              
+                <?php the_sub_field('video_stylings_blog'); ?>
+                <div class="embed-container">
+                  <?php the_sub_field('embedded_link_blog'); ?>
+                </div>
+            </div>
+            <?php endwhile;//end of vimeo ?>
 				<?php wp_link_pages( array(
           'before' => '<div class="page-link"> Pages:',
           'after' => '</div>'
@@ -34,7 +43,6 @@
 
 		</article><!-- #post-## -->
 
-		<?php comments_template( '', true ); ?>
 
 
 <?php endwhile; // End the loop. Whew. ?>

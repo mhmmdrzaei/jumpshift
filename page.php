@@ -3,12 +3,12 @@
 <div class="main">
   <div class="container">
 
-    <div class="content">
+    
       <?php // Start the loop ?>
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <?php the_post_thumbnail('large'); ?>
-       
+       <div class="content">
         <div class="about" id="about"><h2><?php the_content(); ?></h2>
         </div>
          <div class="readMore" id="button"><h2>Read More</h2></div>
@@ -18,7 +18,11 @@
 
 
       <?php endwhile; // end the loop?>
+    </div>
+
+    <section class="servicesbg">
     <!-- sevices -->
+    <div class="content">
     <h2 id="services"> Services:</h2>
     <div class="services">
       
@@ -39,8 +43,10 @@
           </h2>
         </div>
       </div>
-
+      </div>
+    </section>
     <!-- Blog and Video -->
+    <div class="content">
 <div class="blogMain" id="blog">
   <h2>Blog:</h2>
     <?php while( has_sub_fields('hero_video') ): ?>
