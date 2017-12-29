@@ -282,13 +282,13 @@ form {
 .wpcf7-form {
 }
 .contactText {
-	margin: 20px auto;
+	margin: 20px 0;
 }
 .email {
-	margin: 10px auto;
+	margin-top: 20px;
 }
 .phone{
-	margin: 25px auto;
+	margin: 8px 0;
 }
 form.wpcf7-form {
 	p:nth-child(5){
@@ -383,6 +383,30 @@ article {
 	@extend .flex;
 	justify-content: space-between;
 }
+// mailchimp
+.mc4wp-form-fields{
+	p:nth-child(1){
+		input {
+			background: #3E3E3E;
+			border: none;
+			padding: 7px;
+			width: 204px;
+		}
+	}
+	p:nth-child(2){
+		input{
+			padding: 5px 10px;
+			text-align: center;
+			text-transform: uppercase;
+			background: #1e1e1e;
+			border: 3px solid white;
+			color: white;
+			margin-top: 16px;
+		}
+	}
+}
+
+
 
 @media(max-width: 1091px){
 	.services {

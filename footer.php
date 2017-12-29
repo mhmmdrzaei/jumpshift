@@ -9,6 +9,10 @@
       <div class="contactText">
         <?php the_field('contact_text') ?>
       </div>
+      <div class="mailChimp">
+        <h4>Sign up for our newsletter:</h4>
+        <?php the_field('mail_chimp') ?>
+      </div>
       <div class="email">
       
         <a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a>
@@ -16,11 +20,13 @@
       <div class="phone">
         <?php the_field('phone_number') ?>
       </div>
+
       <div class="socialMediaMain">
         <?php while( has_sub_fields('social_media_links') ): ?>
           <a href="<?php the_sub_field('social_media_link'); ?>"><?php the_sub_field('social_media_symbol'); ?></a>
         <?php endwhile;//end of social media loop ?>
       </div>
+
     </div>
 
     <div class="contactForm">
