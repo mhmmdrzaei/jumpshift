@@ -45,6 +45,14 @@
       </div>
       </div>
     </section>
+    <section class="testimonials">
+  <div class="content">
+   <div class="testimonialsMain">
+    <h2>Testimonials:</h2>
+        <div class="testimonialsMainText"> <?php the_field('testimonials_texts') ?> </div>
+  </div>
+  </div>
+</section>
     <!-- Blog and Video -->
     <div class="content">
 <div class="blogMain" id="blog">
@@ -89,6 +97,8 @@
     </div>
   </div>
     </div> <!-- /,content -->
+  
+
 
 
   </div> <!-- /.container -->
