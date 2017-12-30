@@ -351,8 +351,8 @@ footer {
 }
 .widget_text {
 	p {
-		text-align: center;
-		margin: 10px 10px 0;
+		// text-align: center;
+		// margin: 10px 0;
 	}
 	p:nth-child(2){
 		@extend .flex;
@@ -432,6 +432,15 @@ section.testimonials{
 		font-style: italic;
 		p {
 			margin: 10px auto;
+		}
+	}
+}
+.sideWidget {
+	form {
+		.mc4wp-form-fields{
+			p:nth-child(2){
+				width: 100%;
+			}
 		}
 	}
 }
