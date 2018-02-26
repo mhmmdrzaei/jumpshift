@@ -69,7 +69,7 @@
     <div class="blogposts">
       <div class="updates">
         <?
-          $args = array( 'post_type' => 'post', 'order' => 'DESC', 'posts_per_page' => 2 );
+          $args = array( 'post_type' => 'post', 'order' => 'ASC', 'posts_per_page' => 2 );
           query_posts( $args ); // hijack the main loop
           while ( have_posts() ) : the_post();
             ?>

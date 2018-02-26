@@ -92,7 +92,7 @@ nav {
 .about {
 	padding: 3%;
 	text-align: center;
-	p:nth-child(2), p:nth-child(3) {
+ p:nth-child(4) {
 		display: none;
 		margin-top: 5px;
 	}
@@ -236,6 +236,15 @@ img.size-large {
 		li {
 			width: 100%;
 		}
+	}
+}
+.blogsocial {
+	@extend .flex;
+	font-size: 27px;
+	margin: 0 auto;
+	width: 50%;
+	a {
+		margin: 0 4px;
 	}
 }
 // contact
